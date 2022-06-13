@@ -1,3 +1,4 @@
+from collections import Counter
 s = "abca"
 if (len(s))%2==0:
     if s[:int(len(s)/2)] == s[int(len(s)/2):][::-1]:
