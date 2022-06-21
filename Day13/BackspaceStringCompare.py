@@ -18,4 +18,4 @@ class Solution:
                 stackTwo.append(i)
                 
                 
-        return stackOne == stackTwo
+        return stackOne == stackTwo 
