@@ -56,8 +56,6 @@ class Solution:
 #             -> P < Root < Q
 #             -> or P > root > Q
 #         -> So just keep recursivley doing the traversal untill that condition is met 
-        
-        
         if p.val > root.val and q.val > root.val:
             return(self.lowestCommonAncestor(root.right, p, q))
         
