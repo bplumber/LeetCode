@@ -18,4 +18,4 @@ class Solution:
                 tp+=str(j-i)
                 tp+=(str(s[i]))
                 s = tp
-        return s
+        return s    
