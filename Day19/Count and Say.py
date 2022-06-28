@@ -11,11 +11,9 @@ class Solution:
                 j = i+1
                 while j!=len(s):
                     if s[i]!=s[j]:
-                        tp+=str(j-i)
-                        tp+=str(s[i])
+                        tp=tp + str(j-i) + str(s[i])
                         i = j
                     j+=1
-                tp+=str(j-i)
-                tp+=(str(s[i]))
+                tp= tp + str(j-i) + str(s[i])
                 s = tp
-        return s    
+        return s
