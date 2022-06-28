@@ -24,3 +24,34 @@ class Solution:
             if v == mx:
                 rt.append(i)
         return rt
+
+# ALTERNATE SOLUTION
+
+class Solution:
+    def findMode(self, root:TreeNode) :
+        lt = []
+        count = 1
+        mx = 0
+        prev = None
+        def help(root):
+            nonlocal count
+            nonlocal mx
+            nonlocal prev
+            if not root:
+                return
+            help(root.left)
+            if prev is not None:
+                if prev == root.val:
+                    count+=1
+                else:
+                    count = 1
+            if count>mx:
+                mx = count
+                lt.clear()
+                lt.append(root.val)
+            elif count == mx:
+                lt.append(root.val)
+            prev = root.val
+            help(root.right)
+        help(root)
+        return lt
