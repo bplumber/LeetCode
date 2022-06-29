@@ -4,7 +4,7 @@ class ListNode:
         self.val = val
         self.next = next
 class Solution:
-    def middleNode(self, head: ListNode)-> ListNode:
+    def middleNode(self, head: ListNode)-> ListNode :
         temp = head
         ct = 0 
         while temp:
