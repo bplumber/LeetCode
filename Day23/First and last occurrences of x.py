@@ -10,4 +10,4 @@ def find(arr,n,x):
                 else:
                     break
             break
-    return st, en
+    return st, en   
