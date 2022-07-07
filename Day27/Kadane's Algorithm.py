@@ -9,16 +9,16 @@ class Solution:
                 break
         mx = arr[j]
         mxl = []
-        mxl.append(mx)
+        mxl = mx
         for i in range(j+1, N):
             if arr[i]<0 and mx+arr[i]>0:
-                mxl.append(mx)
+                mxl = max(mxl, mx)
                 mx+=arr[i]
             elif arr[i] < 0 and mx+arr[i] <= 0:
-                mxl.append(mx)
+                mxl = max(mxl, mx)
                 mx=0
             else:
                 mx+=arr[i]
-        mxl.append(mx)
+        mxl = max(mxl, mx)
         
-        return max(mxl)
+        return mxl
