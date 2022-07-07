@@ -11,14 +11,14 @@ class Solution:
         mxl = []
         mxl = mx
         for i in range(j+1, N):
-            if arr[i]<0 and mx+arr[i]>0:
+            if arr[i]<0:
                 mxl = max(mxl, mx)
-                mx+=arr[i]
-            elif arr[i] < 0 and mx+arr[i] <= 0:
-                mxl = max(mxl, mx)
-                mx=0
+                if mx+arr[i]>0:
+                    mx+=arr[i]
+                else:
+                    mx=0
             else:
                 mx+=arr[i]
         mxl = max(mxl, mx)
-        
         return mxl
+        
