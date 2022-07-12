@@ -30,3 +30,23 @@ class Solution:
             return ct   
         else:
             return -1
+
+
+class Solution:
+    def maxSubStr(self,str):
+        ct = 0
+        one = 0
+        zero = 0
+        for i in str:
+            if i == '0':
+                zero+=1
+            else:
+                one+=1
+            if one == zero:
+                ct+=1
+                one = 0
+                zero = 0
+        if one!=zero:
+            return -1
+        else:
+            return ct
