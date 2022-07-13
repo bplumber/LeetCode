@@ -1,23 +1,14 @@
 from collections import deque
 def LeftView(root):
-    if (root == None):
-        return []
-    q = deque()
-    q.append(root)
-    q.append(None)
-    ret = []
-    t = []
-    while (len(q) > 1):
-        curr = q.popleft()
-        if (curr == None):
-            ret.append(t[0])
-            t = []
-            q.append(None)
-        else:
-            if (curr.left):
-                q.append(curr.left)
-            if (curr.right):
-                q.append(curr.right)
-            t.append(curr.data)
-    ret.append(t[0])
-    return ret
+    rt = []
+    def hlp(root, level):
+        nonlocal rt
+        if root is None:
+            return 
+        if level == len(rt):
+            rt.append(root.data)
+        hlp(root.left, level+1)
+        hlp(root.right, level+1)
+    
+    hlp(root, 0)
+    return rt
