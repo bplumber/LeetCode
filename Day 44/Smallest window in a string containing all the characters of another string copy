@@ -1,0 +1,35 @@
+from collections import Counter
+class Solution:
+    
+    #Function to find the smallest window in the string s consisting
+    #of all the characters of string p.
+    def smallestWindow(self, s, p):
+        dick_p = dict(Counter(p))
+        i, j = 0, 0
+        ans = s
+        dick_s = {}
+        ct = 0
+        while j < len(s):
+            if s[j] not in dick_s:
+                dick_s[s[j]]=1
+            else:
+                dick_s[s[j]]+=1
+            if s[j] in dick_p:
+                if dick_p[s[j]] >= dick_s[s[j]]:
+                    ct+=1
+            if ct == len(p):
+                while 1:
+                    if s[i] not in dick_p:
+                        i+=1
+                    elif dick_p[s[i]] < dick_s[s[i]]:
+                        dick_s[s[i]]-=1
+                        i+=1
+                    else:
+                        break
+                if len(s[i:j+1])<len(ans):
+                    ans = s[i:j+1]
+            j+=1
+        if ans == s:
+            return -1
+        else:
+            return ans
