@@ -11,10 +11,11 @@ def pre(root):
     while d:
         x = d.pop()
         print(x.data, end=" ")
-        if x.left:
-            d.append(x.left)
         if x.right:
             d.append(x.right)
+        if x.left:
+            d.append(x.left)
+        
 
 def pos(root):
     d = []
