@@ -1,3 +1,4 @@
+
 n = int(input())
 for _ in range(n):
     lt = list(map(int, input().split()))
