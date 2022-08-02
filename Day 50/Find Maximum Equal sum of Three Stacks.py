@@ -14,15 +14,12 @@ class Solution:
                 fnd = ss1
                 break
             if ss1 == mx:
-                if i < n1:
-                    ss1-=s1[i]
+                ss1-=s1[i]
                 i+=1
-            elif ss2 == mx:
-                if j < n2:
-                    ss2-=s2[j]
+            if ss2 == mx:
+                ss2-=s2[j]
                 j+=1
-            elif ss3 == mx:
-                if k < n3:
-                    ss3-=s3[k]
+            if ss3 == mx:
+                ss3-=s3[k]
                 k+=1
         return fnd
